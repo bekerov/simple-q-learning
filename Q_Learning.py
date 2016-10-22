@@ -4,7 +4,7 @@ from Agent_Animation import run_animation
 
 # define parameters
 gamma = 0.9
-num_training_episodes = 5000
+num_training_episodes = 20
 
 
 def run_episode(state, q_table, env):
@@ -62,7 +62,7 @@ def main():
     determine_performance_improvement(training_log, 10)
 
     # run comparative animations, before and after training
-    run_animation(env.x_limit, env.y_limit, training_log[0])
+    #run_animation(env.x_limit, env.y_limit, training_log[0])
     run_animation(env.x_limit, env.y_limit, training_log[-1])
 
 main()

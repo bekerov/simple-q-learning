@@ -14,7 +14,16 @@ class Environment:
         self.goal_reward = 100
         self.goal_states = [(5,5)]
         self.reward_map = \
-        Environment.add_actions_to_reward_map({ (5,5): self.goal_reward },
+        Environment.add_actions_to_reward_map({ (5,5): self.goal_reward,
+                                                (1,2): -100,
+                                                (2,2): -100,
+                                                (3,2): -100,
+                                                (4,2): -100,
+                                                (2,4): -100,
+                                                (3,4): -100,
+                                                (4,4): -100,
+                                                (5,4): -100
+                                                },
                                                 self.action_space)
 
     @staticmethod
@@ -52,7 +61,8 @@ class Environment:
             y = randint(1, self.y_limit)
             if (x, y) not in self.goal_states:
                 break
-        return (x, y)
+        #return (x, y)
+        return (1,1)
 
     def step(self, state, action):
         next_state = self.state_transition(state, action)
