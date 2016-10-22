@@ -1,6 +1,7 @@
 """
 Pygame program to animate the path taken by a Q-Learning agent at different
-points in its learning process.
+points in its learning process. Note that currently this animation is designed
+just for the environment: Grid_World_With_Single_Stationary_Goal.py
 
 This code was adapted from here:
 http://programarcadegames.com/index.php?chapter=array_backed_grids
