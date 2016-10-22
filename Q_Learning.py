@@ -1,10 +1,10 @@
-from Environment import Environment
+from Grid_World_With_Moving_Goal import Environment
 from Q_Table import Q_Table
 from Agent_Animation import run_animation
 
 # define parameters
-gamma = 0.9
-num_training_episodes = 5000
+gamma = 0.8
+num_training_episodes = 500
 
 
 def run_episode(state, q_table, env):
@@ -59,10 +59,10 @@ def main():
 
     # assess training results by comparing the average lengths of the
     # first 10 training episodes against the average lenghts of the last 10
-    determine_performance_improvement(training_log, 10)
+    determine_performance_improvement(training_log, 50)
 
     # run comparative animations, before and after training
-    run_animation(env.x_limit, env.y_limit, training_log[0])
-    run_animation(env.x_limit, env.y_limit, training_log[-1])
+    #run_animation(env.x_limit, env.y_limit, training_log[0])
+    #run_animation(env.x_limit, env.y_limit, training_log[-1])
 
 main()
